@@ -1,0 +1,91 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #795959;
+  padding: 20px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.desc-List{
+    text-align:left;
+    width: 200px;
+    padding: 20px 20px 20px 20px;
+    border-radius: 10px;
+    margin-bottom: 3px;
+    margin-left: 40px
+}
+.goals-List{
+    text-align:left;
+    width: 220px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-bottom: 2px;
+}
+
+.App-layout{
+    background-color: #cfc8d2;
+    width:300px;
+    text-align: center;
+    border-radius: 10px;
+    margin-left: 100px;
+}
+.add-new-btn {
+    border: 1px solid black;
+    background-color: #f4d42f;
+    color: black;
+    padding: 3px 8px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-right: 40px;
+}
+.add-new-btn:hover {
+    background: #f4bf2a;
+    color: white;
+}
+.save-btn {
+    border: 1px solid black;
+    background-color: #dff3ff;
+    color: black;
+    padding: 3px 8px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-left: 40px;
+}
+
+.save-btn:hover {
+    background: #70fff7;
+    color: white;
+}
+
+.delete-btn {
+    border: 1px solid black;
+    background-color: #ffe2f2;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background: #ff8d8b;
+    color: white;
+}
