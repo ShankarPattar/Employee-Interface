@@ -5,16 +5,21 @@ export const deleteGoal =(payload) =>{
     } ;
 }
 
-export const saveGoals =(payLoad ) =>{
+export const saveGoals =(goals ) =>{
     return {
-        type:'SAVE_GOALS',
-        payLoad: payLoad
+        type:'SAVE_GOALS_DATA',
+        data: goals.data
     } ;
 };
 export const fetchGoals =( ) =>{
     return {
-        type:'FETCH_GOAL',
+        type:'FETCH_GOAL_DATA'
     } ;
 };
 
-
+export const addGoals =(goals) =>{
+    return {
+        type:'ADD_GOAL_DATA',
+        goals
+    } ;
+};
