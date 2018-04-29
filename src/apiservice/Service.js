@@ -1,4 +1,5 @@
 import request from 'superagent';
+import {toObject} from '../utils/Helper';
 
 const dataService = store => next => action => {
     /* Pass all actions through by default */
@@ -21,9 +22,9 @@ const dataService = store => next => action => {
                 })
             break;
         case 'SAVE_GOALS':
-    const data = JSON.stringify(action.data)
+            //const data = JSON.stringify(action.data);
             return request
-                .post('http://localhost:3000/data').set('Content-Type', 'multipart/form-data').accept('application/json').send(data)
+                .post('http://localhost:3000/data').set('content-type', 'application/json').accept('application/json').send(action.data)
                 .end((err, res) => {
                     if (err) {
                         return next({

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "json:server": "json-server --watch goals.json"
+    "json:server": "json-server --watch C:\Users\Shankar\Desktop\employee-interface\Employee-Interface\server\goals.json"
   },
   "author": "",
   "license": "ISC",
