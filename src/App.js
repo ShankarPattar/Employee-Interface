@@ -1,36 +1,47 @@
 import React, { Component } from 'react';
-import './App.css';
-import Header from './components/header/header';
+import './css/App.css';
+import Header from './components/header/Header';
 import GoalsList from './components/goalsList/GoalsList';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {fetchGoals } from '../src/goalActions/goalActions';
+import {fetchGoals } from './actions/Actions';
+
+
+const mapDispatchToProps = (dispatch,ownProps)=> {
+    return bindActionCreators({fetchGoals}, dispatch);
+}
+
+const mapStateToProps = (state,ownProps) => {
+    return {
+        data: state.state.data
+    }
+}
 
 class App extends Component {
 
-    componentWillMount() {
+    constructor(props){
+        super(props);
+        this.getGoalList = this.getGoalList.bind(this);
+    }
+
+    componentWillMount(){
         this.props.fetchGoals();
     }
+    getGoalList(){
+        return <GoalsList data = {this.props.data} />
+    }
+
   render() {
     return (
      <div className="App-layout">
          <Header/>
-         <GoalsList/>
+      { this.props.data && this.getGoalList()}
      </div>
     );
   }
 
 }
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators({fetchGoals}, dispatch);
-}
 
-function mapStateToProps(state) {
-    return {
-        goalsList: state.state.data,
-        message: state.state.message
+export default connect(mapStateToProps, mapDispatchToProps)(App);
 
-    }
-}
-export default connect(null, mapDispatchToProps)(App);
 
